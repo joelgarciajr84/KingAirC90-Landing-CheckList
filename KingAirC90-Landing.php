@@ -60,6 +60,15 @@ $KingAirC90->setAirSpeed(95);
 $KingAirC90->setFlaps("up");
 $KingAirC90->setLandingGear("up");
 
-$KingAirC90->PutTheBabyOnTheGround("BalkedLanding");
+//After Landing
+
+$KingAirC90->setLandingLights("As required");
+$KingAirC90->setTaxiLights("As required");
+$KingAirC90->setIceProtection("off");
+$KingAirC90->setAutoIgnition("off");
+$KingAirC90->setTransponder("off");
+$KingAirC90->setStrobeLights("off");
+
+$KingAirC90->PutTheBabyOnTheGround("AfterLanding");
 
 ?>

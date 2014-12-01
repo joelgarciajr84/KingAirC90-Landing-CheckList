@@ -124,6 +124,8 @@ class KingAirC90 {
 				}
 
 				break;
+
+			#Balked Landing
 			case 'BalkedLanding':
 
 				echo "<h1> You are Now on Procedure for a Balked Landing </h1> <br>";
@@ -178,13 +180,16 @@ class KingAirC90 {
 					echo "Landing Gear: " . $this->GetLandingGear() . "<br>";
 				}
 				break;
+
+			#After Landing
+
 			case 'AfterLanding':
 
 				//Landing Lights
 
 				if ($this->GetLandingLights() != "As required") {
 
-					echo "Please check the Landing Lights";
+					echo "Please check the Landing Lights<br>";
 				} else {
 
 					echo "Landing Lights: " . $this->GetLandingLights() . "<br>";
@@ -194,7 +199,7 @@ class KingAirC90 {
 
 				if ($this->GetTaxiLights() != "As required") {
 
-					echo "Please check the Taxi Lights";
+					echo "Please check the Taxi Lights<br>";
 				} else {
 
 					echo "Taxi Lights: " . $this->GetTaxiLights() . "<br>";
@@ -204,7 +209,7 @@ class KingAirC90 {
 
 				if ($this->GetIceProtection() != "off") {
 
-					echo "Please check the Ice Protection";
+					echo "Please check the Ice Protection<br>";
 				} else {
 
 					echo "Ice Protection: " . $this->GetIceProtection() . "<br>";
@@ -215,7 +220,7 @@ class KingAirC90 {
 
 				if ($this->GetAutoIgnition() != "off") {
 
-					echo "Please Check the Auto Ignition";
+					echo "Please Check the Auto Ignition<br>";
 				} else {
 
 					echo "Auto Ignition: " . $this->GetAutoIgnition() . "<br>";
@@ -262,7 +267,7 @@ class KingAirC90 {
 					echo "Please turn off the Strobe Lights";
 				} else {
 
-					echo $this->GetStrobeLights() . "<br>";
+					echo "Strobe Lights: " . $this->GetStrobeLights() . "<br>";
 				}
 
 				break;
