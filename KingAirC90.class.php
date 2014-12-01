@@ -41,32 +41,31 @@ class KingAirC90 {
 				//Pressurisation
 
 				if ($this->GetPressurisation() != "Check") {
-					
+
 					echo "Abort Procedure, Check Pressurisation";
 					die();
-				}else{
+				} else {
 
 					echo "Pressurisation -- OK  " . $this->GetPressurisation() . "<br>";
 				}
 
 				//Cabin Sign
-				if($this->GetCabinSign() != "FSB" && $this->GetCabinSign() !== "NS/FSB"){
+				if ($this->GetCabinSign() != "FSB" && $this->GetCabinSign() !== "NS/FSB") {
 
 					echo "Abort Procedure, Check Cabin Sign";
 
 					die();
-				}else{
+				} else {
 
 					echo "Cabin Sign -- OK  " . $this->GetCabinSign() . "<br>";
 				}
 
 				//Prop AutoFeather
 				if ($this->GetPropAutoFeather() != "Arm") {
-					
+
 					echo "Abort Procedure and check Prop Auto Feather";
 					die();
-				}
-				else{
+				} else {
 
 					echo "Prop Auto Feather -- OK  " . $this->GetPropAutoFeather() . "<br>";
 				}
@@ -74,11 +73,10 @@ class KingAirC90 {
 				//Prop SynchroPhaser
 
 				if ($this->GetPropSynchrophaser() != "As Desired") {
-					
+
 					echo "Abort Procedure and check Prop SynchroPhaser";
 					die();
-				}
-				else{
+				} else {
 
 					echo "Prop SynchroPhaser -- OK  " . $this->GetPropSynchrophaser() . "<br>";
 				}
@@ -86,63 +84,106 @@ class KingAirC90 {
 				//Flaps
 
 				if ($this->Getflaps() != "Approach") {
-					
+
 					echo "Abort Procedure and Check Flaps";
 					die();
-				}
-				else{
+				} else {
 
-					echo "Flaps -- OK  " . $this->GetFlaps() ."<br>";
+					echo "Flaps -- OK  " . $this->GetFlaps() . "<br>";
 				}
 
 				// Landing Gear
 
 				if ($this->GetLandingGear() != "Down") {
-		
+
 					echo "Abort Procedure and Check Landing Gear";
 					die();
-				}
-				else{
+				} else {
 
 					echo "Landing Gear -- OK  " . $this->GetLandingGear() . "<br>";
 				}
 
 				// Lights
 
-				if ($this->GetLights() != "As Required"){
+				if ($this->GetLights() != "As Required") {
 
 					echo "Check Lights <br>";
 
-				}
-				else{
+				} else {
 
-					echo "Lights -- OK  ". $this->GetLights() . "<br>";
+					echo "Lights -- OK  " . $this->GetLights() . "<br>";
 				}
 
 				// Radar
 				if ($this->GetRadar() != "StandBy" && $this->GetRadar() != "off") {
-					
+
 					echo "Abort Procedure Check Radar <br>";
-				}
-				else{
+				} else {
 
 					echo "Radar -- OK  " . $this->GetRadar() . "<br>";
 				}
 
 				break;
-			
-			default:
-				echo "<strong>All Set Make a Cross Check and Land Safe!</strong>";
+			case 'BalkedLanding':
+
+				echo "<h1> You are Now on Procedure for a Balked Landing </h1> <br>";
+				echo "<h2> Check List Situation: <br> </h2>";
+
+				//Power
+				if ($this->GetPower() != "Maximum") {
+
+					echo "Increase the Power to Maximum <br>";
+				} else {
+
+					echo "Power: " . $this->GetPower() . "<br>";
+				}
+
+				//Props
+				if ($this->GetProps() != "Full forward") {
+
+					echo "Get the Props Full forward <br>";
+				} else {
+
+					echo "Props: " . $this->GetProps() . "<br>";
+				}
+
+				//Air Speed
+
+				if ($this->GetAirSpeed() != 95) {
+
+					echo "Get the Airspeed 95 kts until clear the obstacles <br>";
+				} else {
+
+					echo "Air Speed: " . $this->GetAirSpeed() . "<br>";
+
+				}
+
+				//Flaps
+
+				if ($this->GetFlaps() != "up") {
+
+					echo "Put the Flaps up  :) <br>";
+				} else {
+
+					echo "Flaps: " . $this->GetFlaps() . "<br>";
+				}
+
+				//Landing Gear
+
+				if ($this->GetLandingGear() != "up") {
+
+					echo "Put the Landing Gear up <br>";
+				} else {
+
+					echo "Landing Gear: " . $this->GetLandingGear() . "<br>";
+				}
 				break;
-			}
+
+			default:
+				echo "<strong>Something Wrong!</strong>";
+				break;
 		}
-		/*
-			
-			Short final:
-			Props: High rpm
-			Power: Beta or reverse
-			Remove reverse at 40 kts
-*/
+	}
 	//Setters
 
 	public function setPressurisation($Pressurisation) {
@@ -275,7 +316,7 @@ class KingAirC90 {
 
 	}
 
-	public function GetFlaps(){
+	public function GetFlaps() {
 
 		return $this->Flaps;
 	}

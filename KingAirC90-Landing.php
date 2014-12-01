@@ -40,6 +40,9 @@ Strobes: Off
 $KingAirC90 = new KingAirC90();
 
 //= array("BeforeLanding", "BalkedLanding", "AfterLanding")
+
+//Before Landing
+
 $KingAirC90->setPressurisation("Check");
 $KingAirC90->setCabinSign("FSB");
 $KingAirC90->setPropAutoFeather("Arm");
@@ -49,6 +52,14 @@ $KingAirC90->setLandingGear("Down");
 $KingAirC90->setLights("As Required");
 $KingAirC90->setRadar("off");
 
-$KingAirC90->PutTheBabyOnTheGround("BeforeLanding");
+//Balked Landing
+
+$KingAirC90->setPower("Maximum");
+$KingAirC90->setProps("Full forward");
+$KingAirC90->setAirSpeed(95);
+$KingAirC90->setFlaps("up");
+$KingAirC90->setLandingGear("up");
+
+$KingAirC90->PutTheBabyOnTheGround("BalkedLanding");
 
 ?>
