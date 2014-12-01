@@ -178,6 +178,94 @@ class KingAirC90 {
 					echo "Landing Gear: " . $this->GetLandingGear() . "<br>";
 				}
 				break;
+			case 'AfterLanding':
+
+				//Landing Lights
+
+				if ($this->GetLandingLights() != "As required") {
+
+					echo "Please check the Landing Lights";
+				} else {
+
+					echo "Landing Lights: " . $this->GetLandingLights() . "<br>";
+				}
+
+				//Taxi Lights
+
+				if ($this->GetTaxiLights() != "As required") {
+
+					echo "Please check the Taxi Lights";
+				} else {
+
+					echo "Taxi Lights: " . $this->GetTaxiLights() . "<br>";
+				}
+
+				// Ice Protection
+
+				if ($this->GetIceProtection() != "off") {
+
+					echo "Please check the Ice Protection";
+				} else {
+
+					echo "Ice Protection: " . $this->GetIceProtection() . "<br>";
+
+				}
+
+				// Auto Ignition
+
+				if ($this->GetAutoIgnition() != "off") {
+
+					echo "Please Check the Auto Ignition";
+				} else {
+
+					echo "Auto Ignition: " . $this->GetAutoIgnition() . "<br>";
+				}
+
+				//Eletrics
+				echo "<strong>Observe Load Limits</strong><br>";
+
+				//Flaps
+
+				if ($this->GetFlaps() != "up") {
+
+					echo "Put the Flaps up  :) <br>";
+				} else {
+
+					echo "Flaps: " . $this->GetFlaps() . "<br>";
+				}
+
+				// Transponder
+
+				if ($this->GetTransponder() != "off") {
+
+					echo "Please set the Transponder to off<br>";
+				} else {
+
+					echo "Transponder: " . $this->GetTransponder() . "<br>";
+				}
+
+				//Radar
+
+				if ($this->GetRadar() != "off") {
+
+					echo "Please set Radar to off<br>";
+				} else {
+
+					echo "Radar: " . $this->GetRadar() . "<br>";
+
+				}
+
+				//Strobes
+
+				if ($this->GetStrobeLights() != "off") {
+
+					echo "Please turn off the Strobe Lights";
+				} else {
+
+					echo $this->GetStrobeLights() . "<br>";
+				}
+
+				break;
 
 			default:
 				echo "<strong>Something Wrong!</strong>";
